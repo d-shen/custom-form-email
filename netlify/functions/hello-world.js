@@ -4,5 +4,8 @@ export const handler = async () => {
     body: JSON.stringify({
       message: "Hello World!",
     }),
+    headers: {
+      "access-control-allow-origin": "*",
+    },
   };
 };
