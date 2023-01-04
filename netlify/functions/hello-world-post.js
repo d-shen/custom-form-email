@@ -13,14 +13,14 @@ export const handler = async (event, context, callback) => {
   try {
     return {
       statusCode: 200,
-      body: data,
-      headers: CORS_HEADERS,
+      body: JSON.stringify(data),
+      headers: JSON.stringify(CORS_HEADERS),
     };
   } catch (err) {
     return {
       statusCode: err.code,
       body: JSON.stringify({ msg: err.message }),
-      headers: CORS_HEADERS,
+      headers: JSON.stringify(CORS_HEADERS),
     };
   }
 };
