@@ -12,7 +12,7 @@ const CORS_HEADERS = {
   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
 };
 
-export const handler = async (event) => {
+export const handler = async (event, context) => {
   // const { name, email, item, people, budget, text } = JSON.parse(event.body);
 
   // const message = `
