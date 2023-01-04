@@ -10,23 +10,23 @@ export const handler = async (event, context, callback) => {
   // console.log(event.body);
   const data = JSON.parse(event.body);
 
-  callback(null, {
-    statusCode: 200,
-    body: JSON.stringify(data),
-    headers: CORS_HEADERS,
-  });
+  // callback(null, {
+  //   statusCode: 200,
+  //   body: JSON.stringify(data),
+  //   headers: CORS_HEADERS,
+  // });
 
-  // try {
-  //   return {
-  //     statusCode: 200,
-  //     body: "hello",
-  //     headers: JSON.stringify(CORS_HEADERS),
-  //   };
-  // } catch (err) {
-  //   return {
-  //     statusCode: err.code,
-  //     body: JSON.stringify({ msg: err.message }),
-  //     headers: JSON.stringify(CORS_HEADERS),
-  //   };
-  // }
+  try {
+    return {
+      statusCode: 200,
+      body: JSON.stringify(data),
+      headers: CORS_HEADERS,
+    };
+  } catch (err) {
+    return {
+      statusCode: err.code,
+      body: JSON.stringify({ msg: err.message }),
+      headers: CORS_HEADERS,
+    };
+  }
 };
