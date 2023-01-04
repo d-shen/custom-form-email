@@ -2,8 +2,9 @@ import client from "@sendgrid/mail";
 import dotenv from "dotenv";
 dotenv.config();
 
-const { SENDGRID_API_KEY, SENDGRID_TO_EMAIL, SENDGRID_FROM_EMAIL } =
-  process.env;
+client.setApiKey(process.env.SENDGRID_API_KEY);
+// const { SENDGRID_API_KEY, SENDGRID_TO_EMAIL, SENDGRID_FROM_EMAIL } =
+//   process.env;
 
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
@@ -33,18 +34,16 @@ export const handler = async (event, context) => {
 
   const tempMessage = JSON.parse(event.body);
 
-  client.setApiKey(SENDGRID_API_KEY);
-
   const data = {
-    to: SENDGRID_TO_EMAIL,
-    from: SENDGRID_FROM_EMAIL,
+    to: process.env.SENDGRID_TO_EMAIL,
+    from: process.env.SENDGRID_FROM_EMAIL,
     // subject: `New custom corporate order inquiry from ${name} (${email})`,
     subject: `New custom corporate order inquiry from`,
-    html: tempMessage,
+    html: "test",
   };
 
   try {
-    // await client.send(data);
+    await client.send(data);
     return {
       statusCode: 200,
       body: "Message sent",
