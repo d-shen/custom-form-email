@@ -8,7 +8,7 @@ const CORS_HEADERS = {
 export const handler = async (event, context, callback) => {
   // const { message, senderEmail, senderName } = JSON.parse(event.body);
   console.log(event.body);
-  const data = JSON.parse(event.body);
+  // const data = JSON.parse(event.body);
 
   // try {
   //   return {
