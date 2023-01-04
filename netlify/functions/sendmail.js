@@ -31,13 +31,16 @@ export const handler = async (event, context, callback) => {
     ${text}<br>
     `;
 
+  const tempMessage = JSON.parse(event.body);
+
   client.setApiKey(SENDGRID_API_KEY);
 
   const data = {
     to: SENDGRID_TO_EMAIL,
     from: SENDGRID_FROM_EMAIL,
-    subject: `New custom corporate order inquiry from ${name} (${email})`,
-    html: message,
+    // subject: `New custom corporate order inquiry from ${name} (${email})`,
+    subject: `New custom corporate order inquiry from`,
+    html: tempMessage,
   };
 
   try {
