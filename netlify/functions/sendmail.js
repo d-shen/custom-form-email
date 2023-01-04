@@ -32,14 +32,13 @@ export const handler = async (event, context) => {
   //   ${text}<br>
   //   `;
 
-  const tempMessage = JSON.parse(event.body);
+  const { name, email } = JSON.parse(event.body);
 
   const data = {
     to: process.env.SENDGRID_TO_EMAIL,
     from: process.env.SENDGRID_FROM_EMAIL,
-    // subject: `New custom corporate order inquiry from ${name} (${email})`,
-    subject: `New custom corporate order inquiry from`,
-    html: "test",
+    subject: `New custom corporate order inquiry from ${name} (${email})`,
+    html: `test from ${name}`,
   };
 
   try {
