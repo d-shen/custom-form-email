@@ -7,20 +7,20 @@ const CORS_HEADERS = {
 
 export const handler = async (event, context, callback) => {
   // const { message, senderEmail, senderName } = JSON.parse(event.body);
-  console.log("hello");
-  // const data = JSON.parse(event.body);
+  console.log(event.body);
+  const data = JSON.parse(event.body);
 
-  // try {
-  //   return {
-  //     statusCode: 200,
-  //     body: data,
-  //     headers: CORS_HEADERS,
-  //   };
-  // } catch (err) {
-  //   return {
-  //     statusCode: err.code,
-  //     body: JSON.stringify({ msg: err.message }),
-  //     headers: CORS_HEADERS,
-  //   };
-  // }
+  try {
+    return {
+      statusCode: 200,
+      body: data,
+      headers: CORS_HEADERS,
+    };
+  } catch (err) {
+    return {
+      statusCode: err.code,
+      body: JSON.stringify({ msg: err.message }),
+      headers: CORS_HEADERS,
+    };
+  }
 };
