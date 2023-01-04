@@ -21,13 +21,13 @@ export const handler = async (event, context) => {
     <strong>Email Address</strong><br>
     ${email}<br>
     <strong>What are you looking for? Select multiple if required. (Note: custom work will have an additional charge.)</strong><br>
-    ${item}<br>
+    ${item ? `${item}` : ""}<br>
     <strong>How many people are you buying for?</strong><br>
     ${people}<br>
     <strong>What is your budget per person?</strong><br>
     ${budget}<br>
     <strong>Please let us know when you need the order by and if there's anything else you're looking for.</strong><br>
-    ${text}<br>
+    ${text ? `${text}` : ""}<br>
     `;
 
   const data = {
