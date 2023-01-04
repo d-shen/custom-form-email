@@ -46,11 +46,17 @@ export const handler = async (event, context, callback) => {
     return {
       statusCode: 200,
       body: "Message sent",
+      headers: {
+        "access-control-allow-origin": "*",
+      },
     };
   } catch (err) {
     return {
       statusCode: err.code,
       body: JSON.stringify({ msg: err.message }),
+      headers: {
+        "access-control-allow-origin": "*",
+      },
     };
   }
 };
