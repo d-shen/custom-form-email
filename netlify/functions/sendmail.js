@@ -13,23 +13,23 @@ const CORS_HEADERS = {
 };
 
 export const handler = async (event, context, callback) => {
-  const { name, email, item, people, budget, text } = JSON.parse(event.body);
+  // const { name, email, item, people, budget, text } = JSON.parse(event.body);
 
-  const message = `
-    <h3>Corporate Gifts with Phidon</h3><br>
-    <strong>Company Name</strong><br>
-    ${name}<br>
-    <strong>Email Address</strong><br>
-    ${email}<br>
-    <strong>What are you looking for? Select multiple if required. (Note: custom work will have an additional charge.)</strong><br>
-    ${item}<br>
-    <strong>How many people are you buying for?</strong><br>
-    ${people}<br>
-    <strong>What is your budget per person?</strong><br>
-    ${budget}<br>
-    <strong>Please let us know when you need the order by and if there's anything else you're looking for.</strong><br>
-    ${text}<br>
-    `;
+  // const message = `
+  //   <h3>Corporate Gifts with Phidon</h3><br>
+  //   <strong>Company Name</strong><br>
+  //   ${name}<br>
+  //   <strong>Email Address</strong><br>
+  //   ${email}<br>
+  //   <strong>What are you looking for? Select multiple if required. (Note: custom work will have an additional charge.)</strong><br>
+  //   ${item}<br>
+  //   <strong>How many people are you buying for?</strong><br>
+  //   ${people}<br>
+  //   <strong>What is your budget per person?</strong><br>
+  //   ${budget}<br>
+  //   <strong>Please let us know when you need the order by and if there's anything else you're looking for.</strong><br>
+  //   ${text}<br>
+  //   `;
 
   const tempMessage = JSON.parse(event.body);
 
