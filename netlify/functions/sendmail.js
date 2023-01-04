@@ -5,11 +5,6 @@ dotenv.config();
 const { SENDGRID_API_KEY, SENDGRID_TO_EMAIL, SENDGRID_FROM_EMAIL } =
   process.env;
 
-// const SENDGRID_API_KEY =
-//   "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";
-// const SENDGRID_TO_EMAIL = "phidon-dev@outlook.com";
-// const SENDGRID_FROM_EMAIL = "phidon-dev@outlook.com";
-
 export const handler = async (event, context, callback) => {
   // const { message, senderEmail, senderName } = JSON.parse(event.body);
   const { name, email, item, people, budget, text } = JSON.parse(event.body);
