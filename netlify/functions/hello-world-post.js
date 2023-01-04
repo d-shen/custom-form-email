@@ -8,13 +8,12 @@ const CORS_HEADERS = {
 export const handler = async (event, context, callback) => {
   // const { message, senderEmail, senderName } = JSON.parse(event.body);
   console.log(event.body);
-  // const data = JSON.parse(event.body);
-  const data = event.body;
+  const data = JSON.parse(event.body);
 
   try {
     return {
       statusCode: 200,
-      body: JSON.stringify(data),
+      body: "hello",
       headers: JSON.stringify(CORS_HEADERS),
     };
   } catch (err) {
