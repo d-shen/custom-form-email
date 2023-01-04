@@ -5,12 +5,16 @@ dotenv.config();
 const { SENDGRID_API_KEY, SENDGRID_TO_EMAIL, SENDGRID_FROM_EMAIL } =
   process.env;
 
+const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers":
+    "Origin, X-Requested-With, Content-Type, Accept",
+  "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+};
+
 export const handler = async (event, context, callback) => {
-  // const { message, senderEmail, senderName } = JSON.parse(event.body);
   const { name, email, item, people, budget, text } = JSON.parse(event.body);
 
-  // const senderName = "testname";
-  // const senderEmail = "test@test.com";
   const message = `
     <h3>Corporate Gifts with Phidon</h3><br>
     <strong>Company Name</strong><br>
@@ -41,26 +45,13 @@ export const handler = async (event, context, callback) => {
     return {
       statusCode: 200,
       body: "Message sent",
-      headers: {
-        "access-control-allow-origin": "*",
-      },
+      headers: CORS_HEADERS,
     };
   } catch (err) {
     return {
       statusCode: err.code,
       body: JSON.stringify({ msg: err.message }),
-      headers: {
-        "access-control-allow-origin": "*",
-      },
+      headers: CORS_HEADERS,
     };
   }
 };
-
-// {
-//   "name": "fdsa",
-//   "email": "ace@gmail.com",
-//   "item": "pens,custom-notebooks",
-//   "people": "1-10",
-//   "budget": "$25-50",
-//   "text": "fdfd"
-// }
