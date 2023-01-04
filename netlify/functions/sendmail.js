@@ -44,7 +44,7 @@ export const handler = async (event, context) => {
   };
 
   try {
-    await client.send(data);
+    // await client.send(data);
     return {
       statusCode: 200,
       body: "Message sent",
