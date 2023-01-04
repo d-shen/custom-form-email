@@ -22,7 +22,7 @@ export const handler = async (event, context, callback) => {
     from: SENDGRID_FROM_EMAIL,
     // subject: `New custom corporate order inquiry from ${name} (${email})`,
     subject: `New custom corporate order inquiry from`,
-    html: tempMessage,
+    html: data,
   };
 
   try {

@@ -47,7 +47,7 @@ export const handler = async (event, context, callback) => {
     await client.send(data);
     return {
       statusCode: 200,
-      body: JSON.stringify(data),
+      body: "Message sent",
       headers: CORS_HEADERS,
     };
   } catch (err) {
