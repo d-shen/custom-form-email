@@ -13,7 +13,7 @@ export const handler = async (event, context, callback) => {
   callback(null, {
     statusCode: 200,
     body: JSON.stringify(data),
-    headers: JSON.stringify(CORS_HEADERS),
+    headers: CORS_HEADERS,
   });
 
   // try {
